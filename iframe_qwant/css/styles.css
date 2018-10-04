@@ -44,28 +44,15 @@ h2 {
 .player ul li {
 	display: inline-block;
 }
-#arm{
-	width: 90px;
-	height: 90px;
-	position: absolute;
-	z-index: 1;
-	top: 15px;
-	left: 110px;
-	transform-origin: 77.5% 18.5%;
-	transform: rotate(-45deg);
-	background-image: url(https://i.imgur.com/Bzzqadh.png);
-	background-size: cover;
-}
-.artwork {
+.album_picture {
 	position: absolute;
 	top: 0;
 	left: 0;
 	height: 190px;
 	width: 190px;
-	background: url(https://i.imgur.com/3idGgyU.png), url(https://i.imgur.com/Fu2Oezw.png) center no-repeat;
 	background-size: 190px, 75px !important;
 }
-.artwork img {
+.album_picture img {
   position: absolute;
   height: 72px;
   width: 72px;
@@ -222,7 +209,7 @@ h2 {
 	position: inherit;
 	pointer-events: none;
 }
-@-moz-document url-prefix() { //fix firefox being 1px off
+@-moz-document url-prefix() {
 	.slider .volume{
 		margin-top: 11px;
 	}
