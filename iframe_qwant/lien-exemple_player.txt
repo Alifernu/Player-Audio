@@ -3,3 +3,13 @@ https://codepen.io/ozzie/pen/YPOBEJ
 
 exemple player lien 2 :
 https://codepen.io/cmd430/pen/KwGyoX
+
+
+
+https://open.spotify.com/user/spotify/playlist/37i9dQZF1DX1fUhjG13BRt?si=PQLYqkYQQs-6va6LLXD_kA
+
+
+
+Couleur barre musique : #5e6afb
+
+Couleur Player Qwant Music : #282d32
