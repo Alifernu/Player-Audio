@@ -1,42 +1,57 @@
 /* Music 
 ======================================*/
-var playlist = [
-	{
-		"name"    : "House of the Rising Sun",
-		"album_name"   : "The Animals",
-		"artist_name"  : "The Animals",
-		"album_picture" : "http://upload.wikimedia.org/wikipedia/en/thumb/a/a8/Rising_sun_animals_US.jpg/220px-Rising_sun_animals_US.jpg",
-		"preview_url"     : "http://retro-disko.ru/6/music/016.mp3"
-	},
-	{
-		"name"    : "Superstition",
-		"album_name"   : "Talking Book",
-		"artist_name"  : "Stevie Wonder",
-		"album_picture" : "https://i.imgur.com/Py4XcBT.png",
-		"preview_url"     : "http://vocaroo.com/media_command.php?media=s1WYNvqulYH9&command=download_mp3"
-	},
-	{
-		"name"    : "I Need You Back",
-		"album_name"   : "Premiere",
-		"artist_name"  : "The Noisy Freaks",
-		"album_picture" : "http://i1285.photobucket.com/albums/a583/TheGreatOzz1/Hosted-Images/Noisy-Freeks-Image_zps4kilrxml.png",
-		"preview_url"     : "http://kirkbyo.net/Assets/The-Noisy-Freaks.mp3"
-	},
-	// {
-	// 	"song"    : "Yeux disent",
-	// 	"album"   : "FLIP (Deluxe)",
-	// 	"artist"  : "Lomepal",
-	// 	"artwork" : "https://s2.qwant.com/thumbr/0x0/d/f/cea0917cf81d6b364fc76cd545bf5954ff2348b7148cb87893401114b0db76/170x170bb.jpg?u=https%3A%2F%2Fis1-ssl.mzstatic.com%2Fimage%2Fthumb%2FMusic118%2Fv4%2F9a%2Ff6%2F4b%2F9af64be7-6734-5526-21c1-cb3a294526b8%2F3663729044303_cover.jpg%2F170x170bb.jpg&q=0&b=1&p=0&a=0",
-	// 	"mp3"	  : "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/69/5a/f0/695af0ed-7814-6dd5-a977-1853c3f849cd/mzaf_6527844017270148074.plus.aac.p.m4a"
-	// },
-	{
-		"name"    		: "Yeux disent",
-		"album_name"    : "FLIP (Deluxe)",
-		"artist_name"   : "Lomepal",
-		"album_picture" : "https://s2.qwant.com/thumbr/0x0/d/f/cea0917cf81d6b364fc76cd545bf5954ff2348b7148cb87893401114b0db76/170x170bb.jpg?u=https%3A%2F%2Fis1-ssl.mzstatic.com%2Fimage%2Fthumb%2FMusic118%2Fv4%2F9a%2Ff6%2F4b%2F9af64be7-6734-5526-21c1-cb3a294526b8%2F3663729044303_cover.jpg%2F170x170bb.jpg&q=0&b=1&p=0&a=0",
-		"preview_url"	: "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/69/5a/f0/695af0ed-7814-6dd5-a977-1853c3f849cd/mzaf_6527844017270148074.plus.aac.p.m4a"
-	}
-];
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://localhost/playeraudio/json/lomepal.json');
+xhr.onload = function() {
+	console.dir(xhr);
+    if (xhr.status === 200) {
+        var playlist = JSON.parse(xhr.responseText);
+    }
+    else {
+        alert('Request failed.  Returned status of ' + xhr.status);
+    }
+};
+xhr.send();
+
+
+// var playlist = [
+// 	{
+// 		"name"    : "House of the Rising Sun",
+// 		"album_name"   : "The Animals",
+// 		"artist_name"  : "The Animals",
+// 		"album_picture" : "http://upload.wikimedia.org/wikipedia/en/thumb/a/a8/Rising_sun_animals_US.jpg/220px-Rising_sun_animals_US.jpg",
+// 		"preview_url"     : "http://retro-disko.ru/6/music/016.mp3"
+// 	},
+// 	{
+// 		"name"    : "Superstition",
+// 		"album_name"   : "Talking Book",
+// 		"artist_name"  : "Stevie Wonder",
+// 		"album_picture" : "https://i.imgur.com/Py4XcBT.png",
+// 		"preview_url"     : "http://vocaroo.com/media_command.php?media=s1WYNvqulYH9&command=download_mp3"
+// 	},
+// 	{
+// 		"name"    : "I Need You Back",
+// 		"album_name"   : "Premiere",
+// 		"artist_name"  : "The Noisy Freaks",
+// 		"album_picture" : "http://i1285.photobucket.com/albums/a583/TheGreatOzz1/Hosted-Images/Noisy-Freeks-Image_zps4kilrxml.png",
+// 		"preview_url"     : "http://kirkbyo.net/Assets/The-Noisy-Freaks.mp3"
+// 	},
+// 	// {
+// 	// 	"song"    : "Yeux disent",
+// 	// 	"album"   : "FLIP (Deluxe)",
+// 	// 	"artist"  : "Lomepal",
+// 	// 	"artwork" : "https://s2.qwant.com/thumbr/0x0/d/f/cea0917cf81d6b364fc76cd545bf5954ff2348b7148cb87893401114b0db76/170x170bb.jpg?u=https%3A%2F%2Fis1-ssl.mzstatic.com%2Fimage%2Fthumb%2FMusic118%2Fv4%2F9a%2Ff6%2F4b%2F9af64be7-6734-5526-21c1-cb3a294526b8%2F3663729044303_cover.jpg%2F170x170bb.jpg&q=0&b=1&p=0&a=0",
+// 	// 	"mp3"	  : "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/69/5a/f0/695af0ed-7814-6dd5-a977-1853c3f849cd/mzaf_6527844017270148074.plus.aac.p.m4a"
+// 	// },
+// 	{
+// 		"name"    		: "Yeux disent",
+// 		"album_name"    : "FLIP (Deluxe)",
+// 		"artist_name"   : "Lomepal",
+// 		"album_picture" : "https://s2.qwant.com/thumbr/0x0/d/f/cea0917cf81d6b364fc76cd545bf5954ff2348b7148cb87893401114b0db76/170x170bb.jpg?u=https%3A%2F%2Fis1-ssl.mzstatic.com%2Fimage%2Fthumb%2FMusic118%2Fv4%2F9a%2Ff6%2F4b%2F9af64be7-6734-5526-21c1-cb3a294526b8%2F3663729044303_cover.jpg%2F170x170bb.jpg&q=0&b=1&p=0&a=0",
+// 		"preview_url"	: "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/69/5a/f0/695af0ed-7814-6dd5-a977-1853c3f849cd/mzaf_6527844017270148074.plus.aac.p.m4a"
+// 	}
+// ];
 
 /* General Load / Variables
 ======================================*/
@@ -171,8 +186,8 @@ next.onclick = function(){
 	duration = music.duration;
 	music.play();
 }
-previous.onclick = function(){
-	playhead.style.width = "0px";
+	previous.onclick = function(){
+		playhead.style.width = "0px";
 	bufferhead.style.width = "0px";
 	timer.innerHTML = "0:00";
 	music.innerHTML = "";
