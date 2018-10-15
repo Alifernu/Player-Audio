@@ -1,0 +1,93 @@
+@media screen and (min-width: 240px) and (max-width: 600px) {
+	.album_picture {
+		width: 100%;
+		opacity: 0.3;
+	}
+
+	#logo-qwant {
+		opacity: 0.9;
+	}
+	
+	#logo-twitter-share {	
+		opacity: 0.9;
+	}
+
+	#slider {
+		margin-top: 10px;
+		margin-left: 15px;
+		margin-right: 15px;
+		opacity: 0.9;	
+	}
+
+	.info {
+		opacity: 0.9;
+		width: 100%;
+		left: 0;
+		right: 0;
+	}
+
+	.info h2 {
+		margin-top: -5px;
+	}
+
+	.button-items {
+		margin-top: 40px;
+		width: 100%;
+		opacity: 0.9;
+	}
+
+	.controls {
+		width: 100%;
+		height: 10px;
+		text-align: center;
+		display: inline-block;
+		margin-top: 30px;
+		cursor: pointer;
+	}
+
+	.slider {
+		margin: 5px 0px 0px 25px;	
+	}
+}
+	
+@media only screen and (max-width: 320px) {	
+	.slider {
+		margin: 5px 0px 0px 5px;	
+	}
+
+	#logo-twitter-share {
+		left: 15px;
+		top: 45px;
+	}
+}
+
+@media only screen and (max-width: 280px) {
+	#logo-qwant {
+		height: 20px;
+		width: 20px;
+		left: 10px;
+	}
+
+	#logo-twitter-share {
+		height: 20px;
+		width: 20px;
+		left: 10px;
+		top: 45px;
+	}
+}
+
+@media only screen and (max-width: 240px) {
+	#logo-qwant {
+		height: 15px;
+		width: 15px;
+		left: 5px;
+	}
+
+	#logo-twitter-share {
+		height: 15px;
+		width: 15px;
+		position: absolute;
+		left: 5px;
+		top: 40px;
+	}
+}
